@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1829CED82089957C00DCBF19 /* JKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829CED72089957C00DCBF19 /* JKNetworking.m */; };
 		185D0F0E2081DA54006C45B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D0F0D2081DA54006C45B8 /* AppDelegate.m */; };
 		185D0F112081DA54006C45B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D0F102081DA54006C45B8 /* ViewController.m */; };
 		185D0F142081DA54006C45B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D0F122081DA54006C45B8 /* Main.storyboard */; };
 		185D0F162081DA56006C45B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185D0F152081DA56006C45B8 /* Assets.xcassets */; };
 		185D0F192081DA56006C45B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D0F172081DA56006C45B8 /* LaunchScreen.storyboard */; };
 		185D0F1C2081DA56006C45B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D0F1B2081DA56006C45B8 /* main.m */; };
-		189F9720208478B50047B029 /* JKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 189F971F208478B50047B029 /* JKNetworking.m */; };
 		3EED6C21B54990A6338FF0A4 /* libPods-JKNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB6004EF19DE2F05C52BED7 /* libPods-JKNetworking.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01BC95A846EF8AA9FE7671F0 /* Pods-JKNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKNetworking/Pods-JKNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		1829CED62089957C00DCBF19 /* JKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNetworking.h; sourceTree = "<group>"; };
+		1829CED72089957C00DCBF19 /* JKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKNetworking.m; sourceTree = "<group>"; };
 		185D0F092081DA54006C45B8 /* JKNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185D0F0C2081DA54006C45B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		185D0F0D2081DA54006C45B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,8 +31,6 @@
 		185D0F182081DA56006C45B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185D0F1A2081DA56006C45B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		185D0F1B2081DA56006C45B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		189F971E208478B50047B029 /* JKNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKNetworking.h; sourceTree = "<group>"; };
-		189F971F208478B50047B029 /* JKNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKNetworking.m; sourceTree = "<group>"; };
 		2AB6004EF19DE2F05C52BED7 /* libPods-JKNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		571127BA252B3BC3F2DD5DA3 /* Pods-JKNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKNetworking/Pods-JKNetworking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1829CED52089957C00DCBF19 /* JKNetworkingKit */ = {
+			isa = PBXGroup;
+			children = (
+				1829CED62089957C00DCBF19 /* JKNetworking.h */,
+				1829CED72089957C00DCBF19 /* JKNetworking.m */,
+			);
+			path = JKNetworkingKit;
+			sourceTree = "<group>";
+		};
 		185D0F002081DA54006C45B8 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +77,7 @@
 		185D0F0B2081DA54006C45B8 /* JKNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				189F971D2084788A0047B029 /* JKNetworkingKit */,
+				1829CED52089957C00DCBF19 /* JKNetworkingKit */,
 				185D0F0C2081DA54006C45B8 /* AppDelegate.h */,
 				185D0F0D2081DA54006C45B8 /* AppDelegate.m */,
 				185D0F0F2081DA54006C45B8 /* ViewController.h */,
@@ -80,15 +89,6 @@
 				185D0F1B2081DA56006C45B8 /* main.m */,
 			);
 			path = JKNetworking;
-			sourceTree = "<group>";
-		};
-		189F971D2084788A0047B029 /* JKNetworkingKit */ = {
-			isa = PBXGroup;
-			children = (
-				189F971E208478B50047B029 /* JKNetworking.h */,
-				189F971F208478B50047B029 /* JKNetworking.m */,
-			);
-			name = JKNetworkingKit;
 			sourceTree = "<group>";
 		};
 		919E248C68FD1FD182F22F22 /* Pods */ = {
@@ -202,7 +202,7 @@
 			files = (
 				185D0F112081DA54006C45B8 /* ViewController.m in Sources */,
 				185D0F1C2081DA56006C45B8 /* main.m in Sources */,
-				189F9720208478B50047B029 /* JKNetworking.m in Sources */,
+				1829CED82089957C00DCBF19 /* JKNetworking.m in Sources */,
 				185D0F0E2081DA54006C45B8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
