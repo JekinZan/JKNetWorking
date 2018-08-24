@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <AFNetworking/AFNetworking.h>
 typedef void(^JKNetworkDidReceiveResponseCallback)(NSHTTPURLResponse *httpURLResponse);
 typedef void(^JKNetworkProgressCallback)(NSProgress *progress);
 typedef void(^JKNetworkCompletionHandler)(NSError *error,id responseObj);
 
 @interface JKNetworking : NSObject
+@property (nonatomic, strong,readonly) AFHTTPSessionManager *sessionManager;
 @property (nonatomic, strong, readonly) NSURLRequest *request;
 @property (nonatomic, strong, readonly) NSHTTPURLResponse *httpURLResponse;
 /** time out,defalut is 15s, setup before resume */
@@ -37,14 +38,28 @@ typedef void(^JKNetworkCompletionHandler)(NSError *error,id responseObj);
 /**
  GET
  */
-+ (JKNetworking *)GETWithUrl:(NSString *)url
-                  parameters:(id)parameters
-           completionHandler:(JKNetworkCompletionHandler)completionHandler;
++ (instancetype)GETWithUrl:(NSString *)url
+                parameters:(id)parameters
+         completionHandler:(JKNetworkCompletionHandler)completionHandler;
 
 /**
  POST
  */
-+ (JKNetworking *)POSTWithUrl:(NSString *)url
++ (instancetype)POSTWithUrl:(NSString *)url
+                 parameters:(id)parameters
+          completionHandler:(JKNetworkCompletionHandler)completionHandler;
+
+/**
+ PUT
+ */
++ (instancetype)PUTWithUrl:(NSString *)url
+                parameters:(id)parameters
+         completionHandler:(JKNetworkCompletionHandler)completionHandler;
+
+/**
+ DELETE
+ */
++ (instancetype)DELETEWithUrl:(NSString *)url
                    parameters:(id)parameters
             completionHandler:(JKNetworkCompletionHandler)completionHandler;
 /**
@@ -60,4 +75,6 @@ typedef void(^JKNetworkCompletionHandler)(NSError *error,id responseObj);
 - (void)resume;
 //cancel
 - (void)cancel;
+@end
+@interface JKNetworkingDataTask : JKNetworking
 @end

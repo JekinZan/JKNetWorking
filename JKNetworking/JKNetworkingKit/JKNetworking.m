@@ -7,7 +7,7 @@
 //
 
 #import "JKNetworking.h"
-#import <AFNetworking/AFNetworking.h>
+
 #import <objc/runtime.h>
 
 static NSString *const sessionDescription = @"jknetworking_session";
@@ -22,7 +22,7 @@ didCompleteWithError:(NSError *)error;
 @end
 
 #pragma mark - JKNetworkingDataTask Entity
-@interface JKNetworkingDataTask : JKNetworking
+@interface JKNetworkingDataTask ()
 @property (nonatomic, strong) NSURLSessionDataTask *sessionDataTask;
 @property (nonatomic, strong) NSProgress *progress;
 @property (nonatomic, assign) unsigned long long totalBytesRead;
@@ -35,7 +35,7 @@ didCompleteWithError:(NSError *)error;
 @end
 @implementation JKNetworkingDataTask
 - (void)resume {
-    [super resume];    
+    [super resume];
     __weak typeof(self) weakSelf = self;
     self.sessionDataTask = [self.sessionManager dataTaskWithRequest:self.request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         __strong typeof(weakSelf) self = weakSelf;
@@ -104,6 +104,14 @@ didCompleteWithError:(NSError *)error;
 #pragma mark - initialize
 - (instancetype)init {
     if (self = [super init]) {
+        self.sessionManager = [AFHTTPSessionManager manager];
+        self.sessionManager.securityPolicy.allowInvalidCertificates = YES;
+        self.sessionManager.securityPolicy.validatesDomainName = NO;
+        self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [self.sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        self.sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        self.sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/xml", @"text/plain", nil];
+        self.sessionManager.session.sessionDescription = sessionDescription;
         _timeoutInterval = 15.0f;
         _shouldUseCookie = YES;
     }
@@ -116,10 +124,6 @@ didCompleteWithError:(NSError *)error;
                     parameters:(id)parameters
              completionHandler:(JKNetworkCompletionHandler)completionHandler {
     if (self = [self init]) {
-        NSURL *_URL = [NSURL URLWithString:url];
-        NSString *versionCode = [NSString stringWithFormat:@"versionCode=%@",[[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"]];
-        url = [url stringByAppendingFormat:@"%@%@",_URL.query ? @"&" : @"?",versionCode];
-        
         NSError *error = nil;
         NSMutableURLRequest *request = [self.sessionManager.requestSerializer requestWithMethod:method URLString:url parameters:nil error:&error];
         if (error || request == nil) {
@@ -134,16 +138,29 @@ didCompleteWithError:(NSError *)error;
     }
     return self;
 }
-+ (JKNetworking *)GETWithUrl:(NSString *)url parameters:(id)parameters completionHandler:(JKNetworkCompletionHandler)completionHandler {
-    JKNetworking *networking = [[JKNetworkingDataTask alloc] initWithMethod:@"GET" url:url parameters:parameters completionHandler:completionHandler];
++ (instancetype)GETWithUrl:(NSString *)url parameters:(id)parameters completionHandler:(JKNetworkCompletionHandler)completionHandler {
+    JKNetworking *networking = [[self alloc] initWithMethod:@"GET" url:url parameters:parameters completionHandler:completionHandler];
     return networking;
 }
 
-+ (JKNetworking *)POSTWithUrl:(NSString *)url parameters:(id)parameters completionHandler:(JKNetworkCompletionHandler)completionHandler {
-    JKNetworking *networking = [[JKNetworkingDataTask alloc] initWithMethod:@"POST" url:url parameters:parameters completionHandler:completionHandler];
++ (instancetype)POSTWithUrl:(NSString *)url parameters:(id)parameters completionHandler:(JKNetworkCompletionHandler)completionHandler {
+    JKNetworking *networking = [[self alloc] initWithMethod:@"POST" url:url parameters:parameters completionHandler:completionHandler];
     return networking;
 }
 
++ (instancetype)PUTWithUrl:(NSString *)url
+                parameters:(id)parameters
+         completionHandler:(JKNetworkCompletionHandler)completionHandler {
+    JKNetworking *networking = [[self alloc] initWithMethod:@"PUT" url:url parameters:parameters completionHandler:completionHandler];
+    return networking;
+}
+
++ (instancetype)DELETEWithUrl:(NSString *)url
+                   parameters:(id)parameters
+            completionHandler:(JKNetworkCompletionHandler)completionHandler {
+    JKNetworking *networking = [[self alloc] initWithMethod:@"DELETE" url:url parameters:parameters completionHandler:completionHandler];
+    return networking;
+}
 - (void)resume {
     if (_isResumed)[self cancel];
     _isResumed = YES;
