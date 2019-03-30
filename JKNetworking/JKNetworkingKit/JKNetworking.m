@@ -124,6 +124,7 @@ didCompleteWithError:(NSError *)error;
                     parameters:(id)parameters
              completionHandler:(JKNetworkCompletionHandler)completionHandler {
     if (self = [self init]) {
+        url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSError *error = nil;
         NSMutableURLRequest *request = [self.sessionManager.requestSerializer requestWithMethod:method URLString:url parameters:nil error:&error];
         if (error || request == nil) {
