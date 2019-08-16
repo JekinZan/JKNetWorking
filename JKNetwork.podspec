@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source       = { :git => "https://github.com/JekinChou/JKNetWorking.git", :tag => "#{s.version}" }
   s.source_files = "JKNetworking/JKNetworkingKit","*"
-  s.dependency "AFNetworking", "~>2.4.1"
+  s.dependency "AFNetworking", "~>3.0.0"
 
 end
