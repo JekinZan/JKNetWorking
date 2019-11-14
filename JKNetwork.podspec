@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
    s.name         = "JKNetwork"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Secondary packaging."
   s.homepage     = "https://github.com/JekinChou/JKNetWorking"
   s.author       = { "zhangjie" => "454200568@qq.com" }
