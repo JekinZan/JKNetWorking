@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
    s.name         = "JKNetwork"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "Secondary packaging."
   s.homepage     = "https://github.com/JekinChou/JKNetWorking"
   s.author       = { "zhangjie" => "454200568@qq.com" }
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source       = { :git => "https://github.com/JekinChou/JKNetWorking.git", :tag => "#{s.version}" }
   s.source_files = "JKNetworking/JKNetworkingKit","*"
-  s.dependency "AFNetworking", "~>3.0.0"
+  #s.dependency "AFNetworking", "~>3.0.0"
 
 end
