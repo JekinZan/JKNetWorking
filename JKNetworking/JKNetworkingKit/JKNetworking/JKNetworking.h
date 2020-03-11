@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking/AFNetworking.h"
+#import "AFNetworking.h"
 typedef void(^JKNetworkDidReceiveResponseCallback)(NSHTTPURLResponse *httpURLResponse);
 typedef void(^JKNetworkProgressCallback)(NSProgress *progress);
 typedef void(^JKNetworkCompletionHandler)(NSError *error,id responseObj);

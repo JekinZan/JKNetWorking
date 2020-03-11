@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1822153B2089C1C2001E5865 /* JKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1822153A2089C1C2001E5865 /* JKNetworking.m */; };
 		185D0F0E2081DA54006C45B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D0F0D2081DA54006C45B8 /* AppDelegate.m */; };
 		185D0F112081DA54006C45B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185D0F102081DA54006C45B8 /* ViewController.m */; };
 		185D0F142081DA54006C45B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185D0F122081DA54006C45B8 /* Main.storyboard */; };
@@ -28,14 +27,13 @@
 		187F815D2418C7CD00DDF16E /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F814B2418C7CD00DDF16E /* AFURLRequestSerialization.m */; };
 		187F815E2418C7CD00DDF16E /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F814D2418C7CD00DDF16E /* AFNetworkReachabilityManager.m */; };
 		187F815F2418C7CD00DDF16E /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F814E2418C7CD00DDF16E /* AFSecurityPolicy.m */; };
+		187F81652418D4D100DDF16E /* NSURLSession+JKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F81622418D4D100DDF16E /* NSURLSession+JKCategory.m */; };
+		187F81662418D4D100DDF16E /* JKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F81632418D4D100DDF16E /* JKNetworking.m */; };
 		3EED6C21B54990A6338FF0A4 /* libPods-JKNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB6004EF19DE2F05C52BED7 /* libPods-JKNetworking.a */; };
-		758B8388237D34C200B28D36 /* NSURLSession+JKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 758B8387237D34C200B28D36 /* NSURLSession+JKCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01BC95A846EF8AA9FE7671F0 /* Pods-JKNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKNetworking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKNetworking/Pods-JKNetworking.debug.xcconfig"; sourceTree = "<group>"; };
-		182215392089C1C2001E5865 /* JKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNetworking.h; sourceTree = "<group>"; };
-		1822153A2089C1C2001E5865 /* JKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKNetworking.m; sourceTree = "<group>"; };
 		185D0F092081DA54006C45B8 /* JKNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185D0F0C2081DA54006C45B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		185D0F0D2081DA54006C45B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,10 +76,12 @@
 		187F814E2418C7CD00DDF16E /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		187F814F2418C7CD00DDF16E /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
 		187F81502418C7CD00DDF16E /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		187F81612418D4D100DDF16E /* JKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKNetworking.h; sourceTree = "<group>"; };
+		187F81622418D4D100DDF16E /* NSURLSession+JKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+JKCategory.m"; sourceTree = "<group>"; };
+		187F81632418D4D100DDF16E /* JKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKNetworking.m; sourceTree = "<group>"; };
+		187F81642418D4D100DDF16E /* NSURLSession+JKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+JKCategory.h"; sourceTree = "<group>"; };
 		2AB6004EF19DE2F05C52BED7 /* libPods-JKNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		571127BA252B3BC3F2DD5DA3 /* Pods-JKNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKNetworking/Pods-JKNetworking.release.xcconfig"; sourceTree = "<group>"; };
-		758B8386237D34C100B28D36 /* NSURLSession+JKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+JKCategory.h"; sourceTree = "<group>"; };
-		758B8387237D34C200B28D36 /* NSURLSession+JKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+JKCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +99,9 @@
 		182215382089C1C2001E5865 /* JKNetworkingKit */ = {
 			isa = PBXGroup;
 			children = (
+				187F81602418D4D100DDF16E /* JKNetworking */,
 				187F81422418C7CD00DDF16E /* AFNetworking */,
 				187F812D2418C7CD00DDF16E /* UIKit+AFNetworking */,
-				758B8386237D34C100B28D36 /* NSURLSession+JKCategory.h */,
-				758B8387237D34C200B28D36 /* NSURLSession+JKCategory.m */,
-				182215392089C1C2001E5865 /* JKNetworking.h */,
-				1822153A2089C1C2001E5865 /* JKNetworking.m */,
 			);
 			path = JKNetworkingKit;
 			sourceTree = "<group>";
@@ -188,6 +185,17 @@
 				187F81502418C7CD00DDF16E /* AFHTTPSessionManager.h */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		187F81602418D4D100DDF16E /* JKNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				187F81612418D4D100DDF16E /* JKNetworking.h */,
+				187F81622418D4D100DDF16E /* NSURLSession+JKCategory.m */,
+				187F81632418D4D100DDF16E /* JKNetworking.m */,
+				187F81642418D4D100DDF16E /* NSURLSession+JKCategory.h */,
+			);
+			path = JKNetworking;
 			sourceTree = "<group>";
 		};
 		919E248C68FD1FD182F22F22 /* Pods */ = {
@@ -300,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				187F815C2418C7CD00DDF16E /* AFURLSessionManager.m in Sources */,
-				758B8388237D34C200B28D36 /* NSURLSession+JKCategory.m in Sources */,
 				187F81522418C7CD00DDF16E /* UIRefreshControl+AFNetworking.m in Sources */,
 				185D0F112081DA54006C45B8 /* ViewController.m in Sources */,
 				187F81562418C7CD00DDF16E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -310,7 +317,8 @@
 				187F81532418C7CD00DDF16E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				187F815B2418C7CD00DDF16E /* AFHTTPSessionManager.m in Sources */,
 				187F815D2418C7CD00DDF16E /* AFURLRequestSerialization.m in Sources */,
-				1822153B2089C1C2001E5865 /* JKNetworking.m in Sources */,
+				187F81662418D4D100DDF16E /* JKNetworking.m in Sources */,
+				187F81652418D4D100DDF16E /* NSURLSession+JKCategory.m in Sources */,
 				187F81552418C7CD00DDF16E /* UIButton+AFNetworking.m in Sources */,
 				187F81582418C7CD00DDF16E /* AFAutoPurgingImageCache.m in Sources */,
 				187F81512418C7CD00DDF16E /* UIProgressView+AFNetworking.m in Sources */,
